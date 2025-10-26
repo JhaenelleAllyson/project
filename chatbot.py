@@ -99,7 +99,7 @@ st.markdown("""
 header {background: transparent !important;}
 footer {visibility: hidden;}
 .stApp { 
-    background-color: #FAF9EE !important;  /* main solid pastel yellow */
+    background-color: #FAF9EE !important;
 }
 .block-container { padding-top: 0 !important; padding-bottom: 1rem !important; background-color: rgba(0,0,0,0) !important; }
 div[data-testid="stVerticalBlock"] div:empty {display: none !important;}
@@ -295,8 +295,8 @@ if st.session_state.page == "welcome":
         max-width: 750px;
         margin: 80px auto;
         background-color: rgba(153, 167, 153, 0.6);
-        border-radius: 50% 40% 60% 60% / 60% 30% 50% 40%;  /* abstract shape */
-        box-shadow: 0 15px 35px rgba(0,0,0,0.1);  /* soft shadow */
+        border-radius: 50% 40% 60% 60% / 60% 30% 50% 40%;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.1);
         color: #4a4a4a;
         transform: rotate(-1deg);
     ">
@@ -401,15 +401,15 @@ if st.session_state.page == "chat":
 
             prediction = predict_text(user_text)
 
-            # Respond based on prediction
             if prediction == "ham":
                 bot_response_text = "This message looks safe. ✅"
-            else:  # spam
+            else:
                 bot_response_text = "Warning! This message might be spam. ⚠️"
             
             bot_message = f"{bot_response_text}<span class='sentiment-gray'>Prediction: {prediction.upper()}</span>"
             st.session_state.messages.append({"role": "bot", "content": bot_message})
             st.session_state.input_counter += 1
             st.rerun()
+
 
     st.markdown("</div>", unsafe_allow_html=True)
